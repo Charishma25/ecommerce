@@ -4,33 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeoKart - Online Shopping Redefined</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
-    header { background: #0d6efd; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-    .logo { font-size: 24px; font-weight: bold; }
-    nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; }
-    .search-login { display: flex; gap: 10px; }
-    .search-login input { padding: 5px 10px; border-radius: 4px; border: none; }
-    .search-login button { background: #ffc107; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .search-login {
+      display: flex;
+      gap: 10px;
+    }
+    .search-login input {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: none;
+    }
+    .search-login button {
+      background: #ffc107;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-    .hero { background: url('https://images.unsplash.com/photo-1587202372775-e7b56a7fd7c5') no-repeat center center/cover; height: 400px; color: white; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .carousel h1 { font-size: 48px; margin-bottom: 10px; }
-    .carousel p { font-size: 20px; margin-bottom: 20px; }
-    .carousel button { background: #ffc107; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer; border-radius: 5px; }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1587202372775-e7b56a7fd7c5') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+    .hero button {
+      background: #ffc107;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
-    .categories, .featured, .fresh-picks, .why-neokart, footer { padding: 40px 30px; }
-    .category-grid, .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-    .category, .product { background: white; padding: 20px; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .product img { max-width: 100%; border-radius: 8px; margin-bottom: 10px; }
-    .product button { background: #198754; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; }
+    section {
+      padding: 60px 40px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .card button {
+      background: #198754;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-    .why-neokart ul { list-style: none; padding: 0; }
-    .why-neokart li { margin-bottom: 10px; }
-
-    footer { background: #343a40; color: white; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-    footer a { color: #ffc107; text-decoration: none; }
-    .footer-section h3 { margin-top: 0; }
+    footer {
+      background: #1e1e2f;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding: 40px;
+      gap: 30px;
+    }
+    footer h3 {
+      margin-bottom: 10px;
+    }
+    footer ul {
+      list-style: none;
+    }
+    footer ul li a {
+      color: #ffc107;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer p, footer a {
+      color: #ccc;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -39,84 +160,69 @@
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#electronics">Electronics</a></li>
-        <li><a href="#grocery">Grocery</a></li>
-        <li><a href="#vegetables">Vegetables</a></li>
-        <li><a href="#offers">Offers</a></li>
-        <li><a href="#account">My Account</a></li>
-        <li><a href="#cart">My Cart 🛒</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="search-login">
       <input type="text" placeholder="Search products...">
-      <button>Login / Signup</button>
+      <button>Login</button>
     </div>
   </header>
 
   <section class="hero">
-    <div class="carousel">
-      <h1>Big Deals on Electronics</h1>
-      <p>Save up to 50% on top brands</p>
+    <div>
+      <h1>Discover Electronics & Groceries</h1>
+      <p>Best prices. Freshest produce. Delivered to your door.</p>
       <button>Shop Now</button>
     </div>
   </section>
 
-  <section class="categories">
-    <h2>Shop by Category</h2>
-    <div class="category-grid">
-      <div class="category">📱 Electronics</div>
-      <div class="category">🥦 Fresh Vegetables</div>
-      <div class="category">🛒 Groceries</div>
-      <div class="category">🌰 Nuts & Dry Fruits</div>
-      <div class="category">🥬 Organic Products</div>
+  <section id="categories">
+    <h2>Shop by Categories</h2>
+    <div class="grid">
+      <div class="card">📱 Electronics</div>
+      <div class="card">🥦 Fresh Vegetables</div>
+      <div class="card">🛒 Groceries</div>
+      <div class="card">🌰 Nuts & Dry Fruits</div>
     </div>
   </section>
 
-  <section class="featured">
-    <h2>🔥 Deals of the Day</h2>
-    <div class="product-grid">
-      <div class="product">
+  <section id="products">
+    <h2>Featured Products</h2>
+    <div class="grid">
+      <div class="card">
         <img src="https://m.media-amazon.com/images/I/71ZDY57yTQL._AC_SL1500_.jpg" alt="Smartphone">
-        <p>Smartphone - Rs. 14,999</p>
+        <p>Smartphone – Rs. 14,999</p>
         <button>Add to Cart</button>
       </div>
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg" alt="Laptop">
-        <p>Laptop - Rs. 54,999</p>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Onion_on_White.JPG" alt="Onions">
+        <p>Onions 1kg – Rs. 50</p>
         <button>Add to Cart</button>
       </div>
-    </div>
-  </section>
-
-  <section class="fresh-picks">
-    <h2>Fresh Picks</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Onion_on_White.JPG" alt="Onion">
-        <p>Onions 1kg - Rs. 50</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product">
+      <div class="card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Apple.jpg" alt="Apple">
-        <p>Apple 1kg - Rs. 154</p>
+        <p>Apples 1kg – Rs. 154</p>
         <button>Add to Cart</button>
       </div>
     </div>
   </section>
 
-  <section class="why-neokart">
-    <h2>Why Shop With NeoKart?</h2>
-    <ul>
-      <li>✅ 100% Genuine Electronics</li>
-      <li>🌿 Fresh and Organic Produce</li>
-      <li>🕒 Fast Delivery</li>
-      <li>💳 Multiple Payment Options</li>
-      <li>📞 24x7 Customer Support</li>
-    </ul>
+  <section id="about">
+    <h2>Why Choose NeoKart?</h2>
+    <div class="grid">
+      <div class="card">✅ 100% Genuine Electronics</div>
+      <div class="card">🌿 Fresh and Organic Produce</div>
+      <div class="card">🚚 Fast Delivery</div>
+      <div class="card">💳 Secure Payments</div>
+    </div>
   </section>
 
-  <footer>
-    <div class="footer-section">
+  <footer id="contact">
+    <div>
       <h3>About</h3>
       <ul>
         <li><a href="#">Who We Are</a></li>
@@ -124,24 +230,23 @@
         <li><a href="#">Terms & Conditions</a></li>
       </ul>
     </div>
-    <div class="footer-section">
+    <div>
       <h3>Help</h3>
       <ul>
         <li><a href="#">Support</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Returns & Refunds</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Returns</a></li>
       </ul>
     </div>
-    <div class="footer-section">
+    <div>
       <h3>Contact</h3>
-      <p>NeoKart Online Shopping</p>
       <p>📍 Eluru, Vijayawada, Guntur</p>
-      <p>🕒 Mon-Fri: 08:00–18:00<br>Sat: 09:00–20:00<br>Sun: 10:00–20:00</p>
-      <p><a href="https://neokart.co.in/#">Visit Us</a></p>
+      <p>🕒 Mon–Fri: 08:00–18:00<br>Sat: 09:00–20:00<br>Sun: 10:00–20:00</p>
+      <p><a href="https://neokart.co.in/">Visit us online</a></p>
     </div>
-    <div class="footer-section">
+    <div>
       <h3>Follow Us</h3>
-      <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+      <p>Facebook | Instagram</p>
     </div>
   </footer>
 </body>
